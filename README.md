@@ -26,7 +26,7 @@ $ make release
 Now you need to create *.service* file for systemd. You can use `dnsmasq-manager.service`.
 Install it with:
 ```
-# cp dnsmasq-manager.service /etc/systemd/system/
+# cp dnsmasq-manager.service /usr/lib/systemd/system
 # systemctl enable --now dnsmasq-manager.service
 ```
 
