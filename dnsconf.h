@@ -14,8 +14,8 @@ struct SiteGroup
 
 using RuleSet = std::vector<SiteGroup>;
 
-std::string urlToDNSEntry(const std::string &url);		// address=/example.com/ is the syntax for blocking a website in dnsmasq.conf
-														// address=/example.com/redirect.to can be used instead for redirecting.
+std::string urlToDNSEntry(const std::string &url);	// address=/example.com/ is the syntax for blocking a website in dnsmasq.conf
+							// address=/example.com/redirect.to can be used instead for redirecting.
 
 bool ignoreEntryGroup(const std::vector<TimeRange> &allowedTimes);
 void addSiteGroupURLs(std::string &config, const SiteGroup &sg);
