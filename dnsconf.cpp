@@ -9,20 +9,20 @@ const std::string DNSMASQ_CONF_HEAD
 {
 	"listen-address=::1,127.0.0.1\n"	// Do not change this line.
 
-	"server=1.1.1.1\n"					// Add all your desired DNSs from this point on.
-	"server=8.8.8.8\n"					// Without valid DNSs you won't have internet connection at all.
-										// The example I give works just fine. If you don't know what to do
-										// just leave it as is.
+	"server=1.1.1.1\n"		// Add all your desired DNSs from this point on.
+	"server=8.8.8.8\n"		// Without valid DNSs you won't have internet connection at all.
+					// The example I give works just fine. If you don't know what to do
+					// just leave it as is.
 };
 
 /* You can copy paste this and replace <category name>, <urls> and <TimeRanges> like the example below.
  * v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v 
  * const SiteGroup <category name>
  * {
- * 		{<urls>},
- * 		{
- * 			<TimeRanges>
- * 		}
+ * 	{<urls>},
+ * 	{
+ * 		<TimeRanges>
+ * 	}
  * }
  * ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^  
  */
@@ -40,14 +40,14 @@ const SiteGroup chats		// This is an example I personally use. I first define a 
 	}
 };
 
-const SiteGroup permaBlocked 		// Define as many SiteGroups as you need.
+const SiteGroup permaBlocked 	// Define as many SiteGroups as you need.
 {
 	{
 		"sexysites.com",
 		"stuffidontwantmydaughtertosee.com",
 		"yougettheidea.com",
 	},
-	{}		// Because there are no allowed times set, this works like a permanent blocker. It's good for parental protection.
+	{}	// Because there are no allowed times set, this works like a permanent blocker. It's good for parental protection.
 };
 
 const SiteGroup youtube
@@ -59,10 +59,10 @@ const SiteGroup youtube
 	}
 };
 
-const RuleSet rules{ chats, permaBlocked, youtube };		// Make sure to add all your SiteGroups here.
-															// Otherwise, they will be ignored (i.e. the websites won't ever be blocked).
+const RuleSet rules{ chats, permaBlocked, youtube };	// Make sure to add all your SiteGroups here.
+							// Otherwise, they will be ignored (i.e. the websites won't ever be blocked).
 
-std::string urlToDNSEntry(const std::string &url)		// Can also redirect instead of blocking.
+std::string urlToDNSEntry(const std::string &url)	// Can also redirect instead of blocking.
 {
 	std::string entry{ "address=/" };
 //	entry += url + "/redirect.to/"		// Replace line below with this one to redirect and replace "redirect.to" with a valid url.
@@ -70,7 +70,7 @@ std::string urlToDNSEntry(const std::string &url)		// Can also redirect instead 
 	return entry;
 }
 
-bool ignoreEntryGroup(const std::vector<TimeRange> &allowedTimes)		// Determines whether a SiteGroup should be allowed at time of execution.
+bool ignoreEntryGroup(const std::vector<TimeRange> &allowedTimes)	// Determines whether a SiteGroup should be allowed at time of execution.
 {																		// the EntryGroup is *ignored* from being blocked at dnsmasq.conf
 	std::time_t time{};
 	std::time(&time);
