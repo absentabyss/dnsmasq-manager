@@ -1,0 +1,9 @@
+[Unit]
+After=dnsmasq.service
+
+[Service]
+ExecStart=/usr/bin/dnsmasq-manager
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
