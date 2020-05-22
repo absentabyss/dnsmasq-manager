@@ -40,4 +40,4 @@ The service file is probably located at `/usr/lib/systemd/system/dnsmasq.service
 If you do bind **dnsmasq** to **dnsmasq-manager**, then you don't need **dnsmasq-manager.service** to be enabled as **dnsmasq.service** will start and stop it automatically.
 
 ### Contact
-For any issues and suggestions contact me: agna.lumi@protonmail.com
+You can contact me: agna.lumi@protonmail.com
