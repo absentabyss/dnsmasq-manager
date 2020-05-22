@@ -15,9 +15,9 @@
 
 constexpr int SECONDS_TO_REFRESH{ 60 * 5 };
 
-const std::string DNSMASQ_CONF_PATH{ "/etc/dnsmasq.conf" }; // These are good default values
+const std::string DNSMASQ_CONF_PATH{ "/etc/dnsmasq.conf" }; 	// These are good default values
 const std::string DNSMASQ_SERVICE{ "dnsmasq.service" };		//
-															//
+								//
 const std::string RESOLV_CONF_PATH{ "/etc/resolv.conf" };	//
 const std::string RESOLV_CONF{ "nameserver 127.0.0.1" };	//
 
@@ -25,7 +25,7 @@ int main()
 {
 	while (true)
 	{
-		overwriteFile(RESOLV_CONF_PATH, RESOLV_CONF);			// Ensures dnsmasq is the only dns in use.
+		overwriteFile(RESOLV_CONF_PATH, RESOLV_CONF);		// Ensures dnsmasq is the only dns in use.
 		if (unitIsHealthy(DNSMASQ_SERVICE))
 		{
 			std::cout << DNSMASQ_SERVICE << " is healthy.\n";
