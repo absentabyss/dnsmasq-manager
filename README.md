@@ -27,7 +27,7 @@ Now you need to create *.service* file for systemd. You can use `dnsmasq-manager
 Install it with:
 ```
 # cp dnsmasq-manager.service /usr/lib/systemd/system
-# systemctl enable --now dnsmasq-manager.service
+# systemctl enable --now dnsmasq.service dnsmasq-manager.service
 ```
 
 You may optionally want to add a dependency of **dnsmasq** to **dnsmasq-manager** by appending the following line to the *Unit* section of `dnsmasq.service` *(I have provided a sample file as well)*:
