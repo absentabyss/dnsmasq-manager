@@ -11,7 +11,7 @@ Then you can set your desired refresh time over at `main.cpp` by setting *SECOND
 In the current version, setting this number too high might be counter-productive.
 
 Let's say you want to block access to **youtube.com** at **20:00**.
-With `SECONDS_TO_REFRESH{ 60 * 60 }` *(one hour)* **youtube.com** could potentially get blocked at **20:59**, which is a whole hour of potential ditraction!
+With `SECONDS_TO_REFRESH{ 60 * 60 }` *(one hour)* **youtube.com** could potentially get blocked at **20:59**, which is a whole hour of potential distraction!
 
 I might change this in the future *(if anyone wants to)*, but for the time being, and because I set `SECONDS_TO_REFRESH{ 5 }`, I have no problems with this setup.
 
