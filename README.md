@@ -15,6 +15,8 @@ With `SECONDS_TO_REFRESH{ 60 * 60 }` *(one hour)* **youtube.com** could potentia
 
 I might change this in the future *(if anyone wants to)*, but for the time being, and because I set `SECONDS_TO_REFRESH{ 5 }`, I have no problems with this setup.
 
+You should also backup your `/etc/resolv.conf` file for when you uninstall the program, otherwise you may not be able to access any website.
+
 #### Installing
 Run:
 ```
